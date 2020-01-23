@@ -187,7 +187,7 @@
 \begin{spacing}{1.5}
 
 \section{Two Sum}
-\section*{题目}
+\section*{\href{https://leetcode.com/problems/two-sum/}{题目}}
 \fbox{%
   \parbox{\textwidth}{%
 
@@ -224,11 +224,161 @@ vector<int> twoSum(vector<int>& nums, int target)
 }   
 \end{lstlisting}
 
+\section{Add Two Numbers}
+\section*{\href{https://leetcode.com/problems/add-two-numbers/}{题目} }
+\fbox{%
+  \parbox{\textwidth}{%
+
+  \textbf{You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.}
+
+  \textbf{You may assume the two numbers do not contain any leading zero, except the number 0 itself.}
+  }
+  }
+  \section*{例子}
+  \fbox{%
+  \parbox{\textwidth}{%
+  Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)\\
+  Output: 7 -> 0 -> 8\\
+  Explanation: 342 + 465 = 807.
+  }
+  }
+
+\section*{思路}
+\textbf{\color{blue}链表的题目比较简单，一直向前遍历，直到找到结束的标志--两个链表都遍历完了以及没有进位了。}
+\begin{lstlisting}[caption={},frame=shadowbox]
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
+    {
+        ListNode*temp1=l1;
+        ListNode*temp2=l2;
+        ListNode*start=new ListNode(0);
+        ListNode*mm=start;
+        int jinwei=0;
+        while(temp1||temp2||jinwei)
+        {
+            int sum=0;
+            if(temp1)
+            {
+                sum+=temp1->val;
+                temp1=temp1->next;
+            }
+            if(temp2)
+            {
+                sum+=temp2->val;
+                temp2=temp2->next;
+            }
+            if(jinwei)
+                sum+=1;
+            if(sum>=10)
+                jinwei=1;
+            else
+                jinwei=0;
+            sum=sum%10;
+            ListNode*temp=new ListNode(sum);
+            start->next=temp;
+            start=temp;
+        }
+        return mm->next;
+    }
+\end{lstlisting}
+
+\section{ Longest Substring Without Repeating Characters}
+\section*{\href{https://leetcode.com/problems/longest-substring-without-repeating-characters/}{题目}}
+\fbox{%
+  \parbox{\textwidth}{%
+
+  \textbf{Given a string, find the length of the longest substring without repeating characters.}
+
+  }
+  }
+  \section*{例子}
+  \fbox{%
+  \parbox{\textwidth}{%
+  Input: "abcabcbb"\\
+  Output: 3 \\
+  Explanation: The answer is "abc", with the length of 3. \\
+
+Input: "bbbbb"\\
+Output: 1\\
+Explanation: The answer is "b", with the length of 1.\\
+
+Input: "pwwkew"\\
+Output: 3\\
+Explanation: The answer is "wke", with the length of 3. 
+             Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
+  }
+  }
+
+\section*{思路}
+\textbf{\color{blue}}
+\begin{lstlisting}[caption={},frame=shadowbox]
+ 
+\end{lstlisting}
+
+
+
+
+
+
+\section{Add Two Numbers}
+\section*{\href{https://leetcode.com/problems/add-two-numbers/}{题目} }
+\fbox{%
+  \parbox{\textwidth}{%
+
+  \textbf{You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.}
+
+  \textbf{You may assume the two numbers do not contain any leading zero, except the number 0 itself.}
+  }
+  }
+  \section*{例子}
+  \fbox{%
+  \parbox{\textwidth}{%
+  Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)\\
+  Output: 7 -> 0 -> 8\\
+  Explanation: 342 + 465 = 807.
+  }
+  }
+
+\section*{思路}
+\textbf{\color{blue}链表的题目比较简单，一直向前遍历，直到找到结束的标志--两个链表都遍历完了以及没有进位了。}
+\begin{lstlisting}[caption={},frame=shadowbox]
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
+    {
+        ListNode*temp1=l1;
+        ListNode*temp2=l2;
+        ListNode*start=new ListNode(0);
+        ListNode*mm=start;
+        int jinwei=0;
+        while(temp1||temp2||jinwei)
+        {
+            int sum=0;
+            if(temp1)
+            {
+                sum+=temp1->val;
+                temp1=temp1->next;
+            }
+            if(temp2)
+            {
+                sum+=temp2->val;
+                temp2=temp2->next;
+            }
+            if(jinwei)
+                sum+=1;
+            if(sum>=10)
+                jinwei=1;
+            else
+                jinwei=0;
+            sum=sum%10;
+            ListNode*temp=new ListNode(sum);
+            start->next=temp;
+            start=temp;
+        }
+        return mm->next;
+    }
+\end{lstlisting}
+
+
 
 \end{spacing}
-
-
-
 \end{document}
 
 
