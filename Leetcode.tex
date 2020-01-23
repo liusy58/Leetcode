@@ -309,9 +309,29 @@ Explanation: The answer is "wke", with the length of 3.
   }
 
 \section*{思路}
-\textbf{\color{blue}}
+\textbf{\color{blue}因为要找子序列，并且子序列不能有重复元素，所以一定是滑动窗口法，一个元素记录最左边+unordered\_map就可以了}
 \begin{lstlisting}[caption={},frame=shadowbox]
- 
+    int lengthOfLongestSubstring(string s)
+{
+    if(s.empty())
+        return 0;
+    int left=0;
+    int res=0;
+    unordered_map<char,int>temp;
+    for(int i=0;i<s.size();++i)
+    {
+        if(!temp[s[i]]||left>temp[s[i]])
+        {
+            res=max(res,i-left+1);
+        }
+        else
+        {
+            left=temp[s[i]];
+        }
+        temp[s[i]]=i+1;
+    }
+    return res;
+}
 \end{lstlisting}
 
 
