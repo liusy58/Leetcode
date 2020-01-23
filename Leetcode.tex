@@ -1,0 +1,238 @@
+%!TEX program = xelatex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Thin Sectioned Essay
+% LaTeX Template
+% Version 1.0 (3/8/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original Author:
+% Nicolas Diaz (nsdiaz@uc.cl) with extensive modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper, 11pt]{article} % Font size (can be 10pt, 11pt or 12pt) and paper size (remove a4paper for US letter paper)
+\usepackage[table]{xcolor}
+\usepackage{media9}
+\usepackage{algorithm,algpseudocode}
+\usepackage{algorithmicx}
+\definecolor{keycolor}{RGB}{172, 42, 42}
+\definecolor{mbleu}{RGB}{64,96,127}
+\definecolor{vimvert}{RGB}{46, 139, 87}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\usepackage{xeCJK}
+% \setCJKmainfont[AutoFakeSlant=0.25]{SourceHanSerifSC-Regular}
+% \setCJKsansfont[AutoFakeSlant=0.25]{SourceHanSansSC-Regular}
+% \setCJKmonofont[AutoFakeSlant=0.25]{Sarasa Mono SC}
+
+\usepackage{geometry}
+\geometry{left=2.54cm, top=2.54cm, right=2.54cm, bottom=2.54cm}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usetikzlibrary{tikzmark}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{forest}
+\usepackage{float}
+\usepackage{makecell}
+\usepackage{url}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{listings} 
+\lstset{language=C++}%这条命令可以让LaTeX排版时将C++键字突出显示
+\lstset{breaklines}%这条命令可以让LaTeX自动将长的代码行换行排版
+\lstset{extendedchars=ture}
+\lstset{
+    columns=fixed,       
+    numbers=left,                                        % 在左侧显示行号
+    frame=none,                                          % 不显示背景边框
+    backgroundcolor=\color[RGB]{245,245,244},            % 设定背景颜色
+    keywordstyle=\color[RGB]{40,40,255},                 % 设定关键字颜色
+    numberstyle=\footnotesize\color{darkgray},           % 设定行号格式
+    commentstyle=\it\color[RGB]{0,96,96},                % 设置代码注释的格式
+    stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},   % 设置字符串格式
+    showstringspaces=false,                              % 不显示字符串中的空格
+    language=C++,                                        % 设置语言
+}
+% \usepackage{fancyhdr}
+% \usepackage{lastpage}
+% \pagestyle{fancy}
+% \fancyhf{}
+% \fancyfoot[L]{}
+% \fancyfoot[R]{第 \thepage 页，共 \pageref{LastPage} 页}
+% % \fancyfoot[C]{\thepage/\pageref{LastPage}}
+% \renewcommand{\headrulewidth}{0pt} 
+% \renewcommand{\footrulewidth}{0.4pt} 
+
+% \usepackage[protrusion=true,expansion=true]{microtype} % Better typography
+\usepackage{graphicx} % Required for including pictures
+\usepackage{wrapfig} % Allows in-line images
+\usepackage{newfloat}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Required for accented characters
+\linespread{1.2} % Change line spacing here, Palatino benefits from a slight increase by default
+% \setlength{\parskip}{0.2em}
+\usepackage{amsmath}
+\newtheorem{theorem}{{定理}}
+\newtheorem{lemma}{{推论}}
+\newtheorem{proof}{Proof}[section]
+\newtheorem{Def}{{定义}}
+\newtheorem{proposition}{{命题}}
+\usepackage{indentfirst}
+
+\usepackage{pdfpages}
+\setlength{\parindent}{2em}
+
+\makeatletter
+\renewcommand\@biblabel[1]{\textbf{#1.}} % Change the square brackets for each bibliography item from '[1]' to '1.'
+\renewcommand{\@listI}{\itemsep=0pt} % Reduce the space between items in the itemize and enumerate environments and the bibliography
+
+\renewcommand{\maketitle}{ % Customize the title - do not edit title and author name here, see the TITLE block below
+\begin{center} % Right align
+{\LARGE\@title} % Increase the font size of the title
+
+\large{\@subtitle}
+
+\vspace{1em} % Some vertical space between the title and author name
+
+{\large\@author} % Author name
+% \\\@date % Date
+
+% \vspace{1.5em} % Some vertical space between the author block and abstract
+\end{center}
+}
+
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+\usepackage{geometry}
+\geometry{verbose,letterpaper}
+\usepackage{movie15}
+\usepackage{hyperref}
+\usepackage{enumitem,amssymb}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+% for check symbol 
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\done}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\cmark}}\hspace{-2.5pt}}
+\newcommand{\wontfix}{\rlap{$\square$}{\large\hspace{1pt}\xmark}}
+
+\begin{document}
+    
+\includegraphics[scale=0.3]{sysu.jpeg}
+
+\title{\textbf{\huge Leetcode}\\ % Title
+\textbf{  }\\
+\textbf{\huge 题解}
+} % Subtitle
+\newcommand\@subtitle{}%Matrix 6382题}
+
+
+    
+    
+ % Institution
+
+
+
+%----------------------------------------------------------------------------------------
+
+
+\maketitle % Print the title section
+
+
+\begin{center}
+
+姓名：刘斯宇\\
+学号：17341110
+\end{center}
+
+\tableofcontents
+%----------------------------------------------------------------------------------------
+%	ABSTRACT AND KEYWORDS
+%----------------------------------------------------------------------------------------
+\newpage
+
+
+% \setcounter{tocdepth}{3}
+% \renewcommand{\contentsname}{目录}
+% \tableofcontents
+
+% \vspace{2em} % Some vertical space between the abstract and first section
+
+\newpage
+
+
+\begin{spacing}{1.5}
+
+\section{Two Sum}
+\section*{题目}
+\fbox{%
+  \parbox{\textwidth}{%
+
+  \textbf{Given an array of integers, return indices of the two numbers such that they add up to a specific target.}
+
+  \textbf{You may assume that each input would have exactly one solution, and you may not use the same element twice.}
+  }
+  }
+  \section*{例子}
+  \fbox{%
+  \parbox{\textwidth}{%
+  Given nums = [2, 7, 11, 15], target = 9,
+
+Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].
+  }
+  }
+
+\section*{思路}
+\textbf{\color{blue}配对的题目，我们当然可以用两层额for循环来解决这个问题，但是这样的话，就没什么意义了，所以我们要降低时间复杂度，也就是要降低内层查找的时间复杂度，如何降低？用空间来换时间，所以很显然需要有个map，这样就很容易的得到思路了。代码中比较巧妙的一点是如果出现了vector有相同的值的话，但是我们用后面的induce去覆盖前面的，这样我们遍历的时候就不会忘掉这种相同的值，但是induce不同的情况。}
+\begin{lstlisting}[caption={},frame=shadowbox]
+vector<int> twoSum(vector<int>& nums, int target)
+{
+    unordered_map<int,int>value2index;
+    for(int i=0;i<nums.size();++i)
+        value2index[nums[i]]=i;
+    for(int i=0;i<nums.size();++i)
+    {
+        int temp=target-nums[i];
+        if(value2index.find(temp)!=value2index.end()&&i!=value2index[temp])
+            return {i,value2index[temp]};
+    }
+    return {};
+}   
+\end{lstlisting}
+
+
+\end{spacing}
+
+
+
+\end{document}
+
+
+
+
+
+
