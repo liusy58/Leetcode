@@ -339,62 +339,144 @@ Explanation: The answer is "wke", with the length of 3.
 
 
 
-\section{Add Two Numbers}
-\section*{\href{https://leetcode.com/problems/add-two-numbers/}{题目} }
+\section{ Median of Two Sorted Arrays}
+\section*{\href{https://leetcode.com/problems/median-of-two-sorted-arrays/}{题目} }
 \fbox{%
   \parbox{\textwidth}{%
 
-  \textbf{You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.}
+  \textbf{There are two sorted arrays nums1 and nums2 of size m and n respectively.}
 
-  \textbf{You may assume the two numbers do not contain any leading zero, except the number 0 itself.}
+  \textbf{Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).}
+  
+  \textbf{You may assume nums1 and nums2 cannot be both empty.}
+
   }
   }
   \section*{例子}
   \fbox{%
   \parbox{\textwidth}{%
-  Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)\\
-  Output: 7 -> 0 -> 8\\
-  Explanation: 342 + 465 = 807.
+  nums1 = [1, 3]\\
+  nums2 = [2]\\
+  The median is 2.0\\
+
+  nums1 = [1, 2]\\
+  nums2 = [3, 4]\\
+  The median is (2 + 3)/2 = 2.5
+
   }
   }
 
 \section*{思路}
-\textbf{\color{blue}链表的题目比较简单，一直向前遍历，直到找到结束的标志--两个链表都遍历完了以及没有进位了。}
+\textbf{\color{blue}要求时间复杂度为对数型的，那么就一定要用算法，而且这样的搜索能用的似乎也就是二分法了，怎么二分呢，对什么二分呢？这就是考验功底的时候了，我们可以对我们要找的数字的index进行二分，分别在两个数列中取中间index的数值，两者间的较小的值的一部分被淘汰。以此不断的淘汰。}
 \begin{lstlisting}[caption={},frame=shadowbox]
-    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
-    {
-        ListNode*temp1=l1;
-        ListNode*temp2=l2;
-        ListNode*start=new ListNode(0);
-        ListNode*mm=start;
-        int jinwei=0;
-        while(temp1||temp2||jinwei)
-        {
-            int sum=0;
-            if(temp1)
-            {
-                sum+=temp1->val;
-                temp1=temp1->next;
-            }
-            if(temp2)
-            {
-                sum+=temp2->val;
-                temp2=temp2->next;
-            }
-            if(jinwei)
-                sum+=1;
-            if(sum>=10)
-                jinwei=1;
-            else
-                jinwei=0;
-            sum=sum%10;
-            ListNode*temp=new ListNode(sum);
-            start->next=temp;
-            start=temp;
-        }
-        return mm->next;
-    }
+int help(vector<int>& nums1, vector<int>& nums2,int number1,int number2,int target)
+{
+    if(number1>=nums1.size())
+        return nums2[target+number2-1];
+    if(number2>=nums2.size())
+        return nums1[target+number1-1];
+    if(target==1)
+        return min(nums1[number1],nums2[number2]);
+    int mid1=(number1+target/2-1>=nums1.size())?INT_MAX:nums1[number1+target/2-1];
+    int mid2=(number2+target/2-1>=nums2.size())?INT_MAX:nums2[number2+target/2-1];
+    if(mid1<mid2)
+        return help(nums1,nums2,number1+target/2, number2, target-target/2);
+    return help(nums1,nums2,number1, number2+target/2, target-target/2);
+}
+double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
+{
+    int num1=(int)nums1.size();
+    int num2=(int)nums2.size();
+    return (help(nums1,nums2,0,0,(num1+num2+1)/2)+help(nums1,nums2,0,0,(num1+num2+2)/2))/2.0;
+}
 \end{lstlisting}
+
+
+
+\section{  Longest Palindromic Substring}
+\section*{\href{https://leetcode.com/problems/longest-palindromic-substring/}{题目} }
+\fbox{%
+  \parbox{\textwidth}{%
+
+  \textbf{Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.}
+  }
+  }
+  \section*{例子}
+  \fbox{%
+  \parbox{\textwidth}{%
+  \textbf{Example 1:}\\
+  Input: "babad"\\
+  Output: "bab"\\
+  Note: "aba" is also a valid answer.\\
+  \textbf{Example 2:}\\
+  Input: "cbbd"\\
+  Output: "bb"\\
+
+  }
+  }
+
+\section*{思路}
+\textbf{\color{blue}对称子串，那么最容易想到的就是从某点出发从中间扩展了，但是要分子串的字符数量是奇数还是偶数的情况。}
+\begin{lstlisting}[caption={},frame=shadowbox]
+void help(int start1,int start2,int &start,int &maxlen,string&s)
+{
+    int len=(int)s.size();
+    while(start1>=0&&start2<len&&s[start1]==s[start2])
+    {
+        --start1;++start2;
+    }
+    ++start1;--start2;
+    if(maxlen<start2-start1+1)
+    {
+        maxlen=start2-start1+1;
+        start=start1;
+    }
+}
+string longestPalindrome(string s)
+{
+    int len=(int)s.size();
+    int start=0,maxlen=0;
+    for(int i=0;i<len;++i)
+    {
+        help(i, i, start, maxlen, s);
+        help(i, i+1, start, maxlen, s);
+    }
+    return s.substr(start,maxlen);
+}
+\end{lstlisting}
+
+
+
+\section{Reverse Integer}
+\section*{\href{https://leetcode.com/problems/reverse-integer/}{题目} }
+\fbox{%
+  \parbox{\textwidth}{%
+
+  \textbf{Given a 32-bit signed integer, reverse digits of an integer.}
+
+}
+}
+  \section*{例子}
+  \fbox{%
+  \parbox{\textwidth}{%
+  \textbf{Example 1:}\\
+  Input: 123\\
+  Output: 321\\
+  \textbf{Example 2:}\\
+  Input: -123\\
+  Output: -321\\
+  \textbf{Example 3:}\\
+  Input: 120\\
+  Output: 21\\
+  }
+  }
+
+\section*{思路}
+\textbf{\color{blue}第一想法}
+\begin{lstlisting}[caption={},frame=shadowbox]
+
+\end{lstlisting}
+
 
 
 
@@ -402,7 +484,28 @@ Explanation: The answer is "wke", with the length of 3.
 \end{document}
 
 
+\section{}
+\section*{\href{}{题目} }
+\fbox{%
+  \parbox{\textwidth}{%
 
+  \textbf{}
+
+}
+}
+  \section*{例子}
+  \fbox{%
+  \parbox{\textwidth}{%
+
+
+  }
+  }
+
+\section*{思路}
+\textbf{\color{blue}}
+\begin{lstlisting}[caption={},frame=shadowbox]
+
+\end{lstlisting}
 
 
 

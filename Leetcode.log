@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.12.9)  23 JAN 2020 23:45
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.12.9)  24 JAN 2020 20:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1865,38 +1865,73 @@ Overfull \hbox (31.43747pt too wide) in paragraph at lines 309--310
  []
 
 [4] [5]
-Overfull \hbox (31.43747pt too wide) in paragraph at lines 351--352
+Overfull \hbox (31.43747pt too wide) in paragraph at lines 354--355
 [][] 
  []
 
 
-Overfull \hbox (31.43747pt too wide) in paragraph at lines 359--360
+Underfull \hbox (badness 10000) in paragraph at lines 367--367
+
+ []
+
+
+Overfull \hbox (31.43747pt too wide) in paragraph at lines 367--368
 [][] 
  []
 
 [6]
+Overfull \hbox (31.43747pt too wide) in paragraph at lines 403--404
+[][] 
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 416--416
+
+ []
+
+
+Overfull \hbox (31.43747pt too wide) in paragraph at lines 416--417
+[][] 
+ []
+
+[8]
+Overfull \hbox (31.43747pt too wide) in paragraph at lines 458--459
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 472--472
+
+ []
+
+
+Overfull \hbox (31.43747pt too wide) in paragraph at lines 472--473
+[][] 
+ []
+
+[9]
 
 Package movie15 Warning: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 (movie15)                @@ Package `movie15' is obsolete and @@
 (movie15)                @@ superseded by `media9'.           @@
 (movie15)                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.
 
-[7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 402.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 402.
+[10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 484.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 484.
  (./Leetcode.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 402.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 402.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 484.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 484.
 Package rerunfilecheck Info: File `Leetcode.out' has not changed.
-(rerunfilecheck)             Checksum: 738CFD4FFD1FC387E8E4CBB51B3931FB.
+(rerunfilecheck)             Checksum: 5CC780619EFC79985B00169B9DD0B53A.
  ) 
 Here is how much of TeX's memory you used:
- 48715 strings out of 492970
- 1077290 string characters out of 6133938
- 1247890 words of memory out of 5000000
- 52137 multiletter control sequences out of 15000+600000
+ 48753 strings out of 492970
+ 1077730 string characters out of 6133938
+ 1287890 words of memory out of 5000000
+ 52175 multiletter control sequences out of 15000+600000
  550951 words of font info for 71 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  55i,7n,69p,10421b,2221s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Leetcode.pdf (7 pages).
+Output written on Leetcode.pdf (10 pages).
