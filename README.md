@@ -8,8 +8,6 @@
 |2. Add Two Numbers |  Medium|链表 | ✅ |
 |3. Longest Substring Without Repeating Characters|Medium|滑动窗口| ✅|
 |4. Median of Two Sorted Arrays|Hard|二分| ✅|
-|5. Longest Palindromic Substring|两边扩展法|二分| ✅|
-|6. ZigZag Conversion||| ❎|
-|7. Reverse Integer||||
-
+|241|Medium|递归|✅|
+|242|Easy|字符串|✅|
 
