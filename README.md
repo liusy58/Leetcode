@@ -13,3 +13,6 @@
 |[241-Different Ways to Add Parentheses](https://github.com/liusy58/Leetcode/tree/master/241-Different%20Ways%20to%20Add%20Parentheses)|Medium|递归|✅|
 |[242-Valid Anagram](https://github.com/liusy58/Leetcode/tree/master/242-Valid%20Anagram)|Easy|字符串|✅|
 
+
+
+clang++ -Wall -g -std=c++11 -stdlib=libc++ crypt1.cpp -o crypt1
