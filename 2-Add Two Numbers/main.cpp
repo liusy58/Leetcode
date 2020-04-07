@@ -47,6 +47,6 @@ ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
     }
     head=res;
     res=res->next;
-    free(head);
+    delete(head);
     return res;
 }
