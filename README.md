@@ -15,4 +15,4 @@
 
 
 
-clang++ -Wall -g -std=c++11 -stdlib=libc++ crypt1.cpp -o crypt1
+clang++ -Wall -g -std=c++11 -stdlib=libc++ main.cpp -o main
