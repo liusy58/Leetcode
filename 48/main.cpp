@@ -9,3 +9,5 @@
             for(int j=0;j<i;++j)
                 swap(matrix[i][j],matrix[j][i]);
     }
+
+//先上下对称，再绕着左对角线对称
