@@ -6,6 +6,7 @@
         "random": "cpp",
         "iostream": "cpp",
         "iosfwd": "cpp",
-        "tuple": "cpp"
+        "tuple": "cpp",
+        "limits": "cpp"
     }
 }
