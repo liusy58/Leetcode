@@ -14,5 +14,6 @@
 |[242-Valid Anagram](https://github.com/liusy58/Leetcode/tree/master/242-Valid%20Anagram)|Easy|字符串|✅|
 
 
+每周打一次周赛防止老年痴呆。
 
 clang++ -Wall -g -std=c++11 -stdlib=libc++ main.cpp -o main
